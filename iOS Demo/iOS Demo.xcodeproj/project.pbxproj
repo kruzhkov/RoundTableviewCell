@@ -13,7 +13,23 @@
 		E53A32331C3507D600026808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E53A32311C3507D600026808 /* LaunchScreen.storyboard */; };
 		E53A323D1C3A18D000026808 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A323C1C3A18D000026808 /* TableViewController.swift */; };
 		E53A323F1C3A1B3D00026808 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53A323E1C3A1B3D00026808 /* TableViewCell.swift */; };
+		E53A324C1C3A5E0700026808 /* RoundTableviewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53A32401C3A4D2D00026808 /* RoundTableviewCell.framework */; };
+		E53A324E1C3A5E3200026808 /* RoundTableviewCell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E53A32401C3A4D2D00026808 /* RoundTableviewCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E53A324F1C3A5E3200026808 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E53A324E1C3A5E3200026808 /* RoundTableviewCell.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E53A32251C3507D600026808 /* iOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E53A324C1C3A5E0700026808 /* RoundTableviewCell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +96,7 @@
 				E53A32211C3507D600026808 /* Sources */,
 				E53A32221C3507D600026808 /* Frameworks */,
 				E53A32231C3507D600026808 /* Resources */,
+				E53A324F1C3A5E3200026808 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,6 +277,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harrieschen.iOS-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -270,6 +289,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harrieschen.iOS-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -292,6 +312,7 @@
 				E53A32391C3507D600026808 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

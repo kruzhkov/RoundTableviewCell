@@ -11,22 +11,27 @@ import UIKit
 @IBDesignable
 public class RoundTableviewCell: UITableViewCell {
 
-    @IBInspectable var cornerRadius: CGFloat = 10 {
+    @IBInspectable public var cornerRadius: CGFloat = 10 {
         didSet {
         }
     }
     
-    @IBInspectable var roundBackgroundColor: UIColor = UIColor(red: 247/255.0, green: 247/255.0, blue: 247/255.0, alpha: 1) {
+    @IBInspectable public var roundBackgroundColor: UIColor = UIColor(red: 247/255.0, green: 247/255.0, blue: 247/255.0, alpha: 1) {
         didSet {
         }
     }
     
-    @IBInspectable var roundFrontColor: UIColor = UIColor.whiteColor() {
+    @IBInspectable public var roundFrontColor: UIColor = UIColor.whiteColor() {
         didSet {
         }
     }
     
-    @IBInspectable var selectedColor: UIColor = UIColor.grayColor() {
+    @IBInspectable public var selectedColor: UIColor = UIColor.grayColor() {
+        didSet {
+        }
+    }
+    
+    @IBInspectable public var separatorLineInset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0) {
         didSet {
         }
     }
@@ -83,22 +88,21 @@ public class RoundTableviewCell: UITableViewCell {
                     addLine = true
                 }
         }
-        
-        if (addLine == true) {
-            let lineHeight: CGFloat = (1.0 / UIScreen.mainScreen().scale)
-            lineLayer.frame = CGRectMake(Margin + 20, lineHeight, bounds.size.width - 60, -lineHeight)
-            lineLayer.backgroundColor = UIColor.grayColor().CGColor
-            self.layer.addSublayer(lineLayer)
-        } else {
-            lineLayer.removeFromSuperlayer()
-        }
-        
         shapeLayer.path = pathRef
         self.contentView.layer.insertSublayer(shapeLayer, atIndex: 0)
         if selected || highlighted {
             shapeLayer.fillColor = selectedColor.CGColor
         } else {
             shapeLayer.fillColor = roundFrontColor.CGColor
+        }
+        
+        if (addLine == true) {
+            let lineHeight: CGFloat = (1.0 / UIScreen.mainScreen().scale)
+            lineLayer.frame = CGRectMake(separatorLineInset.left, lineHeight, bounds.size.width - separatorLineInset.left - separatorLineInset.right - Margin, -lineHeight)
+            lineLayer.backgroundColor = UIColor.grayColor().CGColor
+            self.layer.addSublayer(lineLayer)
+        } else {
+            lineLayer.removeFromSuperlayer()
         }
     }
     

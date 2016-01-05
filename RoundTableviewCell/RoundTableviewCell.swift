@@ -97,9 +97,9 @@ public class RoundTableviewCell: UITableViewCell {
         }
         
         if (addLine == true) {
-            let lineHeight: CGFloat = (1.0 / UIScreen.mainScreen().scale)
+            let lineHeight: CGFloat = (0.5 / UIScreen.mainScreen().scale)
             lineLayer.frame = CGRectMake(separatorLineInset.left, lineHeight, bounds.size.width - separatorLineInset.left - separatorLineInset.right - Margin, -lineHeight)
-            lineLayer.backgroundColor = UIColor.grayColor().CGColor
+            lineLayer.backgroundColor = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 1).CGColor
             self.layer.addSublayer(lineLayer)
         } else {
             lineLayer.removeFromSuperlayer()

@@ -47,6 +47,10 @@ class TableViewController: UITableViewController {
         return 30
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        print(cell?.selected)
+    }
 
     /*
     // Override to support conditional editing of the table view.
